@@ -1,0 +1,25 @@
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  box-shadow: 5px 5px 3px #ffffff;
+  background-color: fuchsia;
+  font-style: italic;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 700;
+  z-index: 100;
+}
+
+.btn:hover {
+  background-color: rgb(175, 51, 51);
+
+  transition: 500ms;
+}
