@@ -10,7 +10,7 @@ const Button = () => {
   // fontStyle: "italic",
   // cursor: "pointer",
   // }
-  return <button className="btn hover:text-[#fff]">Yes
+  return <button className="btn hover:text-[#fff]">WiNF
   </button>;
 };
 
