@@ -7,17 +7,13 @@ import React, { useState, useRef, Suspense } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import Food from "./Food.jsx";
-import Card from "./Card.jsx";
+
 import Button from "./Button.jsx";
-import Student from "./components/Student.jsx";
-import UserGreetings from "./components/UserGreetings.jsx";
-import List from "./components/List.jsx";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Tenkai } from "./components/Tenkai.jsx";
 import Light from "./components/Light.jsx";
+import { Cozy } from "./components/Cozy-lvr.jsx";
 import {
   MeshReflectorMaterial,
   SoftShadows,
@@ -68,10 +64,10 @@ const App = () => {
 
   return (
     <>
-      <main className="relative flex justify-center flex-col bg-[#101010]">
+      <main className="relative flex justify-center  bg-[#101010] lg:flex-col ">
         <Button />
-       
-        <div className="h-[100vh] z-50 ">
+
+        <div className="h-[100vh] z-50 w-[50%] lg:w-full lg:h-[70vh] ">
           <Canvas
             colorManagement
             shadowMap
@@ -83,25 +79,11 @@ const App = () => {
             <Suspense fallback={null}>
               <Tenkai />
               <OrbitControls />
-              {/* <AccumulativeShadows
-              temporal
-              frames={500}
-              alphaTest={0.8}
-              opacity={0.75}
-              scale={12}
-            >
-              <RandomizedLight
-                amount={8}
-                radius={4}
-                ambient={0.5}
-                intensity={2}
-                position={[2.5, 5, -10]}
-              />
-            </AccumulativeShadows> */}
+
               <mesh rotation={[-Math.PI / 2, 0, 0]}>
                 <planeGeometry args={[170, 170]} />
                 <MeshReflectorMaterial
-                  blur={[300, 100]}
+                  blur={[300, 110]}
                   resolution={2048}
                   mixBlur={1}
                   mixStrength={40}
@@ -113,6 +95,18 @@ const App = () => {
                   metalness={0.5}
                 />
               </mesh>
+            </Suspense>
+          </Canvas>
+        </div>
+        <div className="h-[100vh] w-1/2 lg:w-full  ">
+          <Canvas
+            colorManagement
+            shadowMap
+            camera={{ position: [-15, 1, 0], fov: 30 }}
+          >
+            <Suspense fallback={null}>
+              <Cozy />
+              <OrbitControls />
             </Suspense>
           </Canvas>
         </div>
